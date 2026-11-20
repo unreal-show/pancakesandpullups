@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly check-in | Pancakes & Pull-ups</title>
+<meta name="description" content="Free weekly accountability check-in: track daily habits, check in each week and get Marcus Brooks’s read on your week plus one focus for next week.">
+<link rel="canonical" href="https://www.pancakesandpullups.com/check-in">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pancakes &amp; Pull-ups">
+<meta property="og:url" content="https://www.pancakesandpullups.com/check-in">
+<meta property="og:title" content="Weekly check-in | Pancakes & Pull-ups">
+<meta property="og:description" content="Free weekly accountability check-in: track daily habits, check in each week and get Marcus Brooks’s read on your week plus one focus for next week.">
+<meta property="og:image" content="https://www.unreal.show/cast/marcus.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#14182b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314182b'/%3E%3Cellipse cx='32' cy='44' rx='20' ry='6' fill='%23c97a12'/%3E%3Cellipse cx='32' cy='36' rx='20' ry='6' fill='%23f0b85a'/%3E%3Cellipse cx='32' cy='28' rx='20' ry='6' fill='%23e39a2d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.pancakesandpullups.com/#website","url":"https://www.pancakesandpullups.com/","name":"Pancakes & Pull-ups","description":"Free personalized training plans, 7-day meal plans and high-protein recipes by Marcus Brooks.","inLanguage":"en-US","author":{"@id":"https://www.unreal.show/#cast-marcus"},"publisher":{"@id":"https://www.unreal.show/#org"}},{"@type":"Person","@id":"https://www.unreal.show/#cast-marcus","name":"Marcus Brooks","givenName":"Marcus","familyName":"Brooks","url":"https://www.pancakesandpullups.com/about","image":"https://www.unreal.show/cast/marcus.png","jobTitle":"Cast Member","description":"Marcus Brooks shares training plans and high-protein recipes on Pancakes & Pull-ups.","disambiguatingDescription":"AI-generated cast member (fictional character) on the reality series UNREAL. Not a real person.","knowsAbout":["Strength training","Running","Fat loss","Healthy cooking","Meal prep"],"subjectOf":{"@id":"https://www.unreal.show/#series"},"sameAs":["https://www.instagram.com/marcusbrooks.unreal/","https://www.unreal.show/"]},{"@type":"TVSeries","@id":"https://www.unreal.show/#series","name":"UNREAL","url":"https://www.unreal.show/","character":{"@id":"https://www.unreal.show/#cast-marcus"}},{"@type":"Organization","@id":"https://www.unreal.show/#org","name":"UNREAL","url":"https://www.unreal.show/","sameAs":["https://www.instagram.com/unrealtheshow/","https://www.youtube.com/@unrealtheshow"]},{"@type":"WebPage","@id":"https://www.pancakesandpullups.com/check-in#webpage","url":"https://www.pancakesandpullups.com/check-in","name":"Weekly check-in","isPartOf":{"@id":"https://www.pancakesandpullups.com/#website"},"author":{"@id":"https://www.unreal.show/#cast-marcus"}}]}</script>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="/" aria-label="Pancakes &amp; Pull-ups home"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#14182b"/><ellipse cx="32" cy="44" rx="20" ry="6" fill="#c97a12"/><ellipse cx="32" cy="36" rx="20" ry="6" fill="#f0b85a"/><ellipse cx="32" cy="28" rx="20" ry="6" fill="#e39a2d"/><path d="M27 21.5h10l-1.5 5.5h-7z" fill="#fff"/><path d="M15 14h34" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg><span>Pancakes &amp; Pull-ups</span></a>
+  <div class="links"><a href="/#recipes" class="hide-sm">Recipes</a><a href="/about" class="hide-sm">About</a><a href="/check-in" class="hide-sm">Check-in</a><a href="/training">Training plans</a><a href="/meal-plans" class="cta-nav">Meal plans</a></div>
+</div></nav>
+<div class="page-head"><div class="wrap"><div class="crumbs"><a href="/">Home</a> / Check-in</div><p class="eyebrow">Accountability</p><h1>Weekly check-in</h1><p class="sub">Tick off your daily habits, then check in at the end of the week. You'll get Marcus's read on your week and one thing to focus on next. Everything stays in this browser.</p></div></div>
+<div class="wrap ci">
+<section class="ci-card">
+ <div class="ci-head"><div><p class="eyebrow">Daily habits</p><h2>This week</h2></div><div class="ci-streak" id="streak"></div></div>
+ <div class="scroll"><table class="habits" id="habits"></table></div>
+ <p class="muted small">A day counts toward your streak when you hit at least 4 of the 5 habits.</p>
+</section>
+
+<section class="ci-card">
+ <p class="eyebrow">End of week</p><h2>Check in</h2>
+ <form id="ci-form" class="ci-form" autocomplete="off">
+  <label class="field">Workouts planned<input type="number" name="planned" min="0" max="14" value="3" required></label>
+  <label class="field">Workouts done<input type="number" name="done" min="0" max="14" required></label>
+  <label class="field">Average daily steps<input type="number" name="steps" min="0" max="60000" step="500" placeholder="7000"></label>
+  <label class="field">Days you hit your protein<input type="number" name="protein" min="0" max="7" placeholder="5"></label>
+  <label class="field">Average sleep (hours)<input type="number" name="sleep" min="0" max="14" step="0.5" placeholder="7"></label>
+  <label class="field">Energy this week (1–5)<input type="number" name="energy" min="1" max="5" placeholder="3"></label>
+  <label class="field">Weight<input type="number" name="weight" min="50" max="700" step="0.1" placeholder="optional"></label>
+  <label class="field">Units<select name="unit"><option value="lb">lb</option><option value="kg">kg</option></select></label>
+  <label class="field wide">One win this week<input type="text" name="win" maxlength="140" placeholder="e.g. hit every workout"></label>
+  <label class="field wide">What got in the way?<input type="text" name="hard" maxlength="140" placeholder="e.g. late nights at work"></label>
+  <label class="ci-check"><input type="checkbox" name="pain"> Something hurt during or after training</label>
+  <div class="ci-actions"><button class="btn" type="submit">Get Marcus's read</button></div>
+ </form>
+ <div id="ci-result" class="result" aria-live="polite"></div>
+</section>
+
+<section class="ci-card">
+ <div class="ci-head"><div><p class="eyebrow">Your progress</p><h2>History</h2></div><div class="actions"><button class="btn ghost" id="ci-export" type="button">Download my data</button><button class="btn ghost" id="ci-clear" type="button">Clear all</button></div></div>
+ <div id="ci-chart"></div>
+ <div id="ci-history"></div>
+</section>
+
+<div class="note-strip"><b>How this works.</b> Your habits and check-ins are saved only in this browser on this device. Nothing is sent to Marcus or anyone else, and nobody reviews it. Marcus's feedback is generated automatically from your numbers. He's an AI-generated character, not a coach, trainer or clinician. If you're dealing with an injury, a medical condition or a difficult relationship with food or exercise, please talk to a professional.</div>
+</div>
+<footer><div class="wrap">
+  <span>© <span id="year">2026</span> Pancakes &amp; Pull-ups · from <a href="https://www.unreal.show" rel="noopener">UNREAL</a>. General fitness and nutrition information, not medical advice.</span>
+  <span><a href="/training">Training plans</a> · <a href="/meal-plans">Meal plans</a> · <a href="/#recipes">Recipes</a> · <a href="/about">About</a> · <a href="/check-in">Check-in</a> · <a href="https://www.instagram.com/marcusbrooks.unreal/" rel="noopener">Instagram</a></span>
+</div></footer>
+<script src="/app.js"></script>
+<script>(function CI(){
+ var KEY="pp_checkin_v1";
+ var HABITS=[["train","Trained or walked 20+ min"],["steps","Hit my step goal"],["protein","Hit my protein"],["water","Drank enough water"],["sleep","Slept 7+ hours"]];
+ var DAYS=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+ function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+ function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||"{}");d.habits=d.habits||{};d.weeks=d.weeks||[];return d;}catch(e){return {habits:{},weeks:[]};}}
+ var mem=load();
+ function save(){try{localStorage.setItem(KEY,JSON.stringify(mem));}catch(e){}}
+ function ymd(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+ function monday(d){var x=new Date(d.getFullYear(),d.getMonth(),d.getDate());var w=(x.getDay()+6)%7;x.setDate(x.getDate()-w);return x;}
+ var today=new Date(), mon=monday(today);
+ function weekDates(){var a=[];for(var i=0;i<7;i++){var x=new Date(mon);x.setDate(mon.getDate()+i);a.push(x);}return a;}
+ function dayScore(k){var h=mem.habits[k];return h?h.filter(Boolean).length:0;}
+ function streak(){var n=0,d=new Date(today.getFullYear(),today.getMonth(),today.getDate());if(dayScore(ymd(d))<4)d.setDate(d.getDate()-1);while(dayScore(ymd(d))>=4){n++;d.setDate(d.getDate()-1);}return n;}
+ function renderHabits(){
+  var ds=weekDates(),t=ymd(today);
+  var h='<thead><tr><th>Habit</th>'+ds.map(function(d,i){var k=ymd(d);return '<th class="'+(k===t?"today":"")+'">'+DAYS[i]+'<br><span>'+(d.getMonth()+1)+"/"+d.getDate()+'</span></th>';}).join("")+'<th>Week</th></tr></thead><tbody>';
+  HABITS.forEach(function(hb,hi){
+   var cnt=0;
+   h+='<tr><td>'+esc(hb[1])+'</td>'+ds.map(function(d){var k=ymd(d),on=!!(mem.habits[k]&&mem.habits[k][hi]);if(on)cnt++;var fut=d>today&&k!==t;return '<td><input type="checkbox" aria-label="'+esc(hb[1])+" "+k+'" data-k="'+k+'" data-h="'+hi+'"'+(on?" checked":"")+(fut?" disabled":"")+'></td>';}).join("")+'<td><b>'+cnt+'/7</b></td></tr>';
+  });
+  document.getElementById("habits").innerHTML=h+"</tbody>";
+  var s=streak();
+  document.getElementById("streak").innerHTML='<b>'+s+'</b><span>day streak</span>';
+ }
+ document.getElementById("habits").addEventListener("change",function(e){var c=e.target;if(!c.dataset.k)return;var a=mem.habits[c.dataset.k]||[false,false,false,false,false];a[+c.dataset.h]=c.checked;mem.habits[c.dataset.k]=a;save();renderHabits();});
+
+ function num(v){var n=parseFloat(v);return isNaN(n)?null:n;}
+ function feedback(w,prev){
+  var out=[],focus=null,c=w.planned>0?Math.min(1,w.done/w.planned):(w.done>0?1:0);
+  if(c>=0.9)out.push("Every planned session, done. That's how results actually happen: boring weeks stacked on top of each other.");
+  else if(c>=0.6)out.push("Solid week. You showed up for most of it, and most of it is what counts.");
+  else out.push("Rough week. It happens to everyone. We don't make it up with extra sessions. We just start again on Monday, not \"someday\".");
+  if(w.pain){out.push("You said something hurt. Pain isn't something to push through. Swap that movement for one that doesn't hurt, and get it checked if it lasts more than a week or two.");focus=focus||"Train around the sore spot. Swap the move that hurts, keep everything else.";}
+  if(w.sleep!=null&&w.sleep<6){out.push("Under 6 hours of sleep is a real handbrake on recovery and appetite.");focus=focus||"Protect sleep: same bedtime five nights this week, screens off 30 minutes before.";}
+  if(c<0.6){focus=focus||"Cut the plan to what you can definitely do: "+Math.max(2,Math.min(w.planned,w.done+1))+" sessions, booked in your calendar like meetings.";}
+  if(w.protein!=null&&w.protein<4){out.push("Protein was hit on "+w.protein+" of 7 days.");focus=focus||"Protein at breakfast every day. Greek yogurt, eggs or a shake covers it.";}
+  if(w.steps!=null&&w.steps<6000){out.push("Steps averaged "+Math.round(w.steps).toLocaleString()+". Walking is the cheapest win there is.");focus=focus||"A 20-minute walk after one meal every day.";}
+  if(w.sleep!=null&&w.sleep>=6&&w.sleep<7){focus=focus||"Add 30 minutes of sleep. Earlier, not later.";}
+  if(w.energy!=null&&w.energy<=2&&c>=0.9){out.push("Low energy on a full week can mean you need a lighter one. If it lasts two weeks, take a back-off week: same exercises, half the sets.");}
+  if(w.weight!=null&&prev&&prev.weight!=null&&prev.unit===w.unit){
+   var diff=w.weight-prev.weight,pct=diff/prev.weight*100;
+   out.push("Weight: "+(diff>0?"+":"")+diff.toFixed(1)+" "+w.unit+" since your last check-in. One week is mostly water, so watch the trend over 3–4 weeks.");
+   if(pct<-1.2)out.push("That's a fast drop. If it keeps up, eat a bit more. Slower loss keeps more muscle and is easier to stick with.");
+  }
+  if(w.win)out.push("Your win: \""+w.win+"\". Write that down. That's the stuff that keeps you going.");
+  if(w.hard)out.push("What got in the way: \""+w.hard+"\". Plan around it this week instead of hoping it won't happen.");
+  focus=focus||"Progress one thing: add one rep or a little weight to your first exercise each session.";
+  return {c:Math.round(c*100),lines:out,focus:focus};
+ }
+ function summary(w,f){return "Pancakes & Pull-ups check-in (week of "+w.week+")\nWorkouts: "+w.done+"/"+w.planned+" ("+f.c+"%)"+(w.steps!=null?"\nAvg steps: "+Math.round(w.steps):"")+(w.protein!=null?"\nProtein days: "+w.protein+"/7":"")+(w.sleep!=null?"\nAvg sleep: "+w.sleep+" h":"")+(w.win?"\nWin: "+w.win:"")+"\nNext week's focus: "+f.focus;}
+ var form=document.getElementById("ci-form");
+ form.addEventListener("submit",function(e){
+  e.preventDefault();var fd=new FormData(form);
+  var w={week:ymd(mon),planned:num(fd.get("planned"))||0,done:num(fd.get("done"))||0,steps:num(fd.get("steps")),protein:num(fd.get("protein")),sleep:num(fd.get("sleep")),energy:num(fd.get("energy")),weight:num(fd.get("weight")),unit:fd.get("unit"),win:(fd.get("win")||"").trim(),hard:(fd.get("hard")||"").trim(),pain:!!fd.get("pain")};
+  var others=mem.weeks.filter(function(x){return x.week!==w.week;});
+  var prev=others.filter(function(x){return x.weight!=null;}).slice(-1)[0];
+  var f=feedback(w,prev);w.score=f.c;w.focus=f.focus;
+  mem.weeks=others.concat([w]).sort(function(a,b){return a.week<b.week?-1:1;});save();
+  var r=document.getElementById("ci-result");
+  r.innerHTML='<div class="plan"><p class="eyebrow">Week of '+esc(w.week)+'</p><h2>'+f.c+'% consistency</h2>'+f.lines.map(function(l){return "<p>"+esc(l)+"</p>";}).join("")+'<div class="callout"><b>Next week, focus on one thing:</b> '+esc(f.focus)+'</div><div class="actions" style="margin-top:14px"><button class="btn ghost" type="button" id="ci-copy">Copy summary for an accountability buddy</button></div><p class="signoff">See you next week. — Marcus</p></div>';
+  document.getElementById("ci-copy").onclick=function(){var b=this;try{navigator.clipboard.writeText(summary(w,f)).then(function(){b.textContent="Copied. Send it to a friend.";},function(){b.textContent="Copy blocked";});}catch(err){b.textContent="Copy blocked";}};
+  renderHistory();r.scrollIntoView({behavior:"smooth",block:"start"});
+ });
+ function renderHistory(){
+  var ws=mem.weeks,el=document.getElementById("ci-history"),ch=document.getElementById("ci-chart");
+  if(!ws.length){el.innerHTML='<p class="muted">No check-ins yet. Your first one shows up here.</p>';ch.innerHTML="";return;}
+  var W=640,H=150,P=24,L=48,n=ws.length,x=function(i){return n===1?(W+L)/2:L+i*(W-L-P)/(n-1);},y=function(v){return H-P-(v/100)*(H-2*P);};
+  var pts=ws.map(function(w,i){return x(i).toFixed(1)+","+y(w.score||0).toFixed(1);}).join(" ");
+  ch.innerHTML='<svg viewBox="0 0 '+W+" "+H+'" class="ci-svg" role="img" aria-label="Weekly consistency"><line x1="'+L+'" x2="'+(W-P)+'" y1="'+y(100)+'" y2="'+y(100)+'" class="g"/><line x1="'+L+'" x2="'+(W-P)+'" y1="'+y(50)+'" y2="'+y(50)+'" class="g"/><polyline points="'+pts+'" class="l"/>'+ws.map(function(w,i){return '<circle cx="'+x(i)+'" cy="'+y(w.score||0)+'" r="4" class="d"><title>'+esc(w.week)+": "+(w.score||0)+'%</title></circle>';}).join("")+'<text x="'+(L-6)+'" y="'+(y(100)+4)+'" text-anchor="end">100%</text><text x="'+(L-6)+'" y="'+(y(50)+4)+'" text-anchor="end">50%</text></svg>';
+  el.innerHTML='<div class="scroll"><table><thead><tr><th>Week of</th><th>Workouts</th><th>Consistency</th><th>Steps</th><th>Protein days</th><th>Sleep</th><th>Weight</th><th>Focus</th></tr></thead><tbody>'+ws.slice().reverse().map(function(w){return "<tr><td>"+esc(w.week)+"</td><td>"+w.done+"/"+w.planned+"</td><td>"+(w.score||0)+"%</td><td>"+(w.steps!=null?Math.round(w.steps).toLocaleString():"–")+"</td><td>"+(w.protein!=null?w.protein+"/7":"–")+"</td><td>"+(w.sleep!=null?w.sleep+" h":"–")+"</td><td>"+(w.weight!=null?w.weight+" "+esc(w.unit):"–")+'</td><td class="wrapcell">'+esc(w.focus||"")+"</td></tr>";}).join("")+"</tbody></table></div>";
+ }
+ document.getElementById("ci-export").onclick=function(){try{var b=new Blob([JSON.stringify(mem,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="pancakes-and-pullups-checkins.json";a.click();}catch(e){}};
+ var clr=document.getElementById("ci-clear");
+ clr.onclick=function(){if(clr.dataset.armed){mem={habits:{},weeks:[]};save();renderHabits();renderHistory();document.getElementById("ci-result").innerHTML="";clr.textContent="Cleared";delete clr.dataset.armed;}else{clr.dataset.armed="1";clr.textContent="Click again to erase everything";setTimeout(function(){if(clr.dataset.armed){delete clr.dataset.armed;clr.textContent="Clear all";}},4000);}};
+ renderHabits();renderHistory();
+})();</script>
+</body>
+</html>
