@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Training plan builder | Pancakes & Pull-ups</title>
+<meta name="description" content="Answer a few questions and get a free 8-week training plan: strength, muscle, fat loss, recomp or running.">
+<link rel="canonical" href="https://www.pancakesandpullups.com/training">
+<meta property="og:title" content="Training plan builder | Pancakes & Pull-ups">
+<meta property="og:description" content="Answer a few questions and get a free 8-week training plan: strength, muscle, fat loss, recomp or running.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1589627461407-6257b1acf0fd?w=1200&h=630&fit=crop">
+<meta name="theme-color" content="#14182b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314182b'/%3E%3Cellipse cx='32' cy='44' rx='20' ry='6' fill='%23c97a12'/%3E%3Cellipse cx='32' cy='36' rx='20' ry='6' fill='%23f0b85a'/%3E%3Cellipse cx='32' cy='28' rx='20' ry='6' fill='%23e39a2d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="/" aria-label="Pancakes &amp; Pull-ups home"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#14182b"/><ellipse cx="32" cy="44" rx="20" ry="6" fill="#c97a12"/><ellipse cx="32" cy="36" rx="20" ry="6" fill="#f0b85a"/><ellipse cx="32" cy="28" rx="20" ry="6" fill="#e39a2d"/><path d="M27 21.5h10l-1.5 5.5h-7z" fill="#fff"/><path d="M15 14h34" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg><span>Pancakes &amp; Pull-ups</span></a>
+  <div class="links"><a href="/#recipes" class="hide-sm">Recipes</a><a href="/training">Training plans</a><a href="/meal-plans" class="cta-nav">Meal plans</a></div>
+</div></nav>
+<div class="page-head"><div class="wrap"><div class="crumbs"><a href="/">Home</a> / Training plans</div><p class="eyebrow">Training plan builder</p><h1>Build your training plan</h1><p class="sub">Tell me your goal, your schedule and what equipment you have. You'll get an 8-week program (12 for a half marathon) with every workout laid out.</p></div></div>
+<div class="wrap"><form class="quiz" id="train-form" autocomplete="off">
+    <div class="q"><label class="ql" for="t-name">First name <span class="hint">(optional)</span></label>
+      <div class="field"><input class="wide" id="t-name" name="name" maxlength="30" placeholder="e.g. Jordan"></div></div>
+    <div class="q"><span class="ql">What's the main goal?</span><div class="chips">
+      <label><input type="radio" name="goal" value="muscle" checked><span>Build muscle / bodybuilding</span></label>
+      <label><input type="radio" name="goal" value="strength"><span>Get stronger</span></label>
+      <label><input type="radio" name="goal" value="fatloss"><span>Lose fat</span></label>
+      <label><input type="radio" name="goal" value="recomp"><span>Recomp (lose fat + build muscle)</span></label>
+      <label><input type="radio" name="goal" value="running"><span>Running</span></label>
+      <label><input type="radio" name="goal" value="general"><span>Feel fit &amp; healthy</span></label></div></div>
+    <div class="q" id="run-extra" hidden>
+      <div class="two">
+        <div><span class="ql">Running right now?</span><div class="chips">
+          <label><input type="radio" name="runLevel" value="new" checked><span>Can't run 10 min straight yet</span></label>
+          <label><input type="radio" name="runLevel" value="mid"><span>Can run 20–30 min</span></label>
+          <label><input type="radio" name="runLevel" value="exp"><span>Run regularly (15+ mi/week)</span></label></div></div>
+        <div><span class="ql">What are we training for?</span><div class="chips">
+          <label><input type="radio" name="race" value="5k" checked><span>First 5K</span></label>
+          <label><input type="radio" name="race" value="faster5k"><span>Faster 5K</span></label>
+          <label><input type="radio" name="race" value="10k"><span>10K</span></label>
+          <label><input type="radio" name="race" value="half"><span>Half marathon</span></label>
+          <label><input type="radio" name="race" value="more"><span>Just run more</span></label></div></div>
+      </div></div>
+    <div class="two">
+      <div class="q"><span class="ql">Training experience</span><div class="chips">
+        <label><input type="radio" name="exp" value="new" checked><span>New (under 6 months)</span></label>
+        <label><input type="radio" name="exp" value="some"><span>Some (6 mo – 2 yrs)</span></label>
+        <label><input type="radio" name="exp" value="exp"><span>Experienced (2+ yrs)</span></label></div></div>
+      <div class="q"><span class="ql">Days per week</span><div class="chips">
+        <label><input type="radio" name="days" value="2"><span>2</span></label>
+        <label><input type="radio" name="days" value="3" checked><span>3</span></label>
+        <label><input type="radio" name="days" value="4"><span>4</span></label>
+        <label><input type="radio" name="days" value="5"><span>5</span></label>
+        <label><input type="radio" name="days" value="6"><span>6</span></label></div></div>
+    </div>
+    <div class="two">
+      <div class="q"><span class="ql">Time per session</span><div class="chips">
+        <label><input type="radio" name="mins" value="30"><span>30 min</span></label>
+        <label><input type="radio" name="mins" value="45" checked><span>45 min</span></label>
+        <label><input type="radio" name="mins" value="60"><span>60 min</span></label>
+        <label><input type="radio" name="mins" value="75"><span>75+ min</span></label></div></div>
+      <div class="q"><span class="ql">Equipment</span><div class="chips">
+        <label><input type="radio" name="equip" value="gym" checked><span>Full gym</span></label>
+        <label><input type="radio" name="equip" value="db"><span>Dumbbells at home</span></label>
+        <label><input type="radio" name="equip" value="bw"><span>Bodyweight / bands</span></label></div></div>
+    </div>
+    <div class="q"><span class="ql">Anything bugging you? <span class="hint">(pick any)</span></span><div class="chips">
+      <label><input type="checkbox" name="limits" value="knees"><span>Cranky knees</span></label>
+      <label><input type="checkbox" name="limits" value="back"><span>Lower back</span></label>
+      <label><input type="checkbox" name="limits" value="shoulders"><span>Shoulders</span></label>
+      <label><input type="checkbox" name="limits" value="medical"><span>Medical condition, recent surgery or injury, or pregnant</span></label></div></div>
+    <div><button class="btn" type="submit">Build my training plan</button></div>
+  </form><div class="result" id="train-result" aria-live="polite"></div><div class="note-strip"><b>The fine print.</b> Marcus is an AI-generated character from the series UNREAL. He isn't a certified personal trainer, registered dietitian, nutritionist or doctor. Plans on this site are general fitness and nutrition information generated automatically from your answers. They are not medical advice. Check with your doctor before starting a new exercise or eating plan, especially if you have a health condition or injury, take medication, are pregnant, or have a history of disordered eating. Stop any exercise that causes pain, dizziness or shortness of breath. Calorie and macro numbers are estimates. Always check food labels for allergens.</div></div>
+<footer><div class="wrap">
+  <span>© <span id="year">2026</span> Pancakes &amp; Pull-ups · from <a href="https://www.unreal.show" rel="noopener">UNREAL</a>. General fitness and nutrition information, not medical advice.</span>
+  <span><a href="/training">Training plans</a> · <a href="/meal-plans">Meal plans</a> · <a href="/#recipes">Recipes</a> · <a href="https://www.instagram.com/marcusbrooks.unreal/" rel="noopener">Instagram</a></span>
+</div></footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

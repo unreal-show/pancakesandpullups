@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meal plan builder | Pancakes & Pull-ups</title>
+<meta name="description" content="Answer a few questions and get a free 7-day meal plan with calorie and protein targets, recipes and a grocery list.">
+<link rel="canonical" href="https://www.pancakesandpullups.com/meal-plans">
+<meta property="og:title" content="Meal plan builder | Pancakes & Pull-ups">
+<meta property="og:description" content="Answer a few questions and get a free 7-day meal plan with calorie and protein targets, recipes and a grocery list.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1589627461407-6257b1acf0fd?w=1200&h=630&fit=crop">
+<meta name="theme-color" content="#14182b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314182b'/%3E%3Cellipse cx='32' cy='44' rx='20' ry='6' fill='%23c97a12'/%3E%3Cellipse cx='32' cy='36' rx='20' ry='6' fill='%23f0b85a'/%3E%3Cellipse cx='32' cy='28' rx='20' ry='6' fill='%23e39a2d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="/" aria-label="Pancakes &amp; Pull-ups home"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#14182b"/><ellipse cx="32" cy="44" rx="20" ry="6" fill="#c97a12"/><ellipse cx="32" cy="36" rx="20" ry="6" fill="#f0b85a"/><ellipse cx="32" cy="28" rx="20" ry="6" fill="#e39a2d"/><path d="M27 21.5h10l-1.5 5.5h-7z" fill="#fff"/><path d="M15 14h34" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg><span>Pancakes &amp; Pull-ups</span></a>
+  <div class="links"><a href="/#recipes" class="hide-sm">Recipes</a><a href="/training">Training plans</a><a href="/meal-plans" class="cta-nav">Meal plans</a></div>
+</div></nav>
+<div class="page-head"><div class="wrap"><div class="crumbs"><a href="/">Home</a> / Meal plans</div><p class="eyebrow">Meal plan builder</p><h1>Build your meal plan</h1><p class="sub">I'll estimate your calories and protein, then build seven days of meals from the recipe box, portioned for you, with a grocery list.</p></div></div>
+<div class="wrap"><form class="quiz" id="eat-form" autocomplete="off">
+    <div class="two">
+      <div class="q"><label class="ql" for="e-name">First name <span class="hint">(optional)</span></label>
+        <div class="field"><input class="wide" id="e-name" name="name" maxlength="30" placeholder="e.g. Jordan"></div></div>
+      <div class="q"><span class="ql">Units</span><div class="chips">
+        <label><input type="radio" name="units" value="us" checked><span>lb / ft</span></label>
+        <label><input type="radio" name="units" value="metric"><span>kg / cm</span></label></div></div>
+    </div>
+    <div class="q"><span class="ql">About you <span class="hint">(used for the calorie math only, and it never leaves your browser)</span></span>
+      <div class="row">
+        <div class="chips"><label><input type="radio" name="sex" value="f" checked><span>Female</span></label><label><input type="radio" name="sex" value="m"><span>Male</span></label></div>
+        <label class="field">Age<input type="number" name="age" min="13" max="100" inputmode="numeric" placeholder="30"></label>
+        <label class="field us">Height (ft)<input type="number" name="ft" min="3" max="8" inputmode="numeric" placeholder="5"></label>
+        <label class="field us">(in)<input type="number" name="in" min="0" max="11" inputmode="numeric" placeholder="8" value="0"></label>
+        <label class="field metric" hidden>Height (cm)<input type="number" name="cm" min="120" max="230" inputmode="numeric" placeholder="172"></label>
+        <label class="field us">Weight (lb)<input type="number" name="lb" min="70" max="700" inputmode="decimal" placeholder="165"></label>
+        <label class="field metric" hidden>Weight (kg)<input type="number" name="kg" min="30" max="320" inputmode="decimal" placeholder="75"></label>
+      </div><p class="muted small" style="margin:.5em 0 0">The formula uses sex assigned at birth. If that doesn't fit you, pick whichever is closer to your current body. It's just an estimate.</p></div>
+    <div class="two">
+      <div class="q"><span class="ql">How active are you? <span class="hint">(including workouts)</span></span><div class="chips">
+        <label><input type="radio" name="activity" value="sed"><span>Mostly sitting</span></label>
+        <label><input type="radio" name="activity" value="light" checked><span>Light (1–3 workouts/wk)</span></label>
+        <label><input type="radio" name="activity" value="mod"><span>Active (4–5/wk)</span></label>
+        <label><input type="radio" name="activity" value="very"><span>Very active / physical job</span></label></div></div>
+      <div class="q"><span class="ql">Goal</span><div class="chips">
+        <label><input type="radio" name="goal" value="lose" checked><span>Lose fat</span></label>
+        <label><input type="radio" name="goal" value="recomp"><span>Recomp</span></label>
+        <label><input type="radio" name="goal" value="maintain"><span>Maintain</span></label>
+        <label><input type="radio" name="goal" value="gain"><span>Build muscle (lean gain)</span></label></div></div>
+    </div>
+    <div class="two">
+      <div class="q"><span class="ql">How do you eat?</span><div class="chips">
+        <label><input type="radio" name="diet" value="any" checked><span>Everything</span></label>
+        <label><input type="radio" name="diet" value="pescatarian"><span>Pescatarian</span></label>
+        <label><input type="radio" name="diet" value="vegetarian"><span>Vegetarian</span></label>
+        <label><input type="radio" name="diet" value="vegan"><span>Vegan</span></label></div></div>
+      <div class="q"><span class="ql">Leave out <span class="hint">(allergies or just no thanks)</span></span><div class="chips">
+        <label><input type="checkbox" name="excl" value="dairy"><span>Dairy</span></label>
+        <label><input type="checkbox" name="excl" value="gluten"><span>Gluten</span></label>
+        <label><input type="checkbox" name="excl" value="egg"><span>Eggs</span></label>
+        <label><input type="checkbox" name="excl" value="nuts"><span>Peanuts/tree nuts</span></label>
+        <label><input type="checkbox" name="excl" value="fish"><span>Fish</span></label>
+        <label><input type="checkbox" name="excl" value="shellfish"><span>Shellfish</span></label>
+        <label><input type="checkbox" name="excl" value="soy"><span>Soy</span></label>
+        <label><input type="checkbox" name="excl" value="sesame"><span>Sesame</span></label></div></div>
+    </div>
+    <div class="two">
+      <div class="q"><span class="ql">Meals per day</span><div class="chips">
+        <label><input type="radio" name="meals" value="3"><span>3 meals</span></label>
+        <label><input type="radio" name="meals" value="4" checked><span>3 meals + snack</span></label>
+        <label><input type="radio" name="meals" value="5"><span>3 meals + 2 snacks</span></label></div></div>
+      <div class="q"><span class="ql">Cooking style</span><div class="chips">
+        <label><input type="radio" name="cook" value="quick"><span>Quick (20 min max)</span></label>
+        <label><input type="radio" name="cook" value="some" checked><span>I like to cook</span></label>
+        <label><input type="radio" name="cook" value="prep"><span>Meal prep, fewer recipes</span></label></div></div>
+    </div>
+    <div class="q"><span class="ql">Any of these? <span class="hint">(if so, I'll point you to the right pro)</span></span><div class="chips">
+      <label><input type="checkbox" name="flags" value="preg"><span>Pregnant or breastfeeding</span></label>
+      <label><input type="checkbox" name="flags" value="med"><span>Diabetes, kidney disease or another condition</span></label>
+      <label><input type="checkbox" name="flags" value="ed"><span>History of disordered eating</span></label></div></div>
+    <p class="err" id="eat-err" role="alert"></p>
+    <div><button class="btn" type="submit">Build my meal plan</button></div>
+  </form><div class="result" id="eat-result" aria-live="polite"></div><div class="note-strip"><b>The fine print.</b> Marcus is an AI-generated character from the series UNREAL. He isn't a certified personal trainer, registered dietitian, nutritionist or doctor. Plans on this site are general fitness and nutrition information generated automatically from your answers. They are not medical advice. Check with your doctor before starting a new exercise or eating plan, especially if you have a health condition or injury, take medication, are pregnant, or have a history of disordered eating. Stop any exercise that causes pain, dizziness or shortness of breath. Calorie and macro numbers are estimates. Always check food labels for allergens.</div></div>
+<footer><div class="wrap">
+  <span>© <span id="year">2026</span> Pancakes &amp; Pull-ups · from <a href="https://www.unreal.show" rel="noopener">UNREAL</a>. General fitness and nutrition information, not medical advice.</span>
+  <span><a href="/training">Training plans</a> · <a href="/meal-plans">Meal plans</a> · <a href="/#recipes">Recipes</a> · <a href="https://www.instagram.com/marcusbrooks.unreal/" rel="noopener">Instagram</a></span>
+</div></footer>
+<dialog id="rmodal" aria-label="Recipe"><div class="inner"><button id="rclose" aria-label="Close">×</button><div id="rbody"></div></div></dialog>
+<script src="/app.js"></script>
+</body>
+</html>
